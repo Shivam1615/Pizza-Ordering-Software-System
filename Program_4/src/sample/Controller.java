@@ -74,6 +74,12 @@ public void ChangeCombo(ActionEvent event){
         Remove_Toppings.setDisable(false);
     }
 }
+    
+public void handleButtonClick(ActionEvent event){
+  if(event.getSource().equals(Clear_Selection)){
+        initialize();
+  }
+}
 
 
 
