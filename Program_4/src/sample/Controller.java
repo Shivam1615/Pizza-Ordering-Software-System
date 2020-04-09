@@ -45,6 +45,9 @@ public ObservableList<String> Hawaiian_Toppings = FXCollections.observableArrayL
 public void initialize(){
     Type_Of_Style.setItems(Style_list);
     Type_Of_Size.setItems(Size_list);
+    Type_Of_Size.getSelectionModel().select("medium");
+    Type_Of_Style.getSelectionModel().select("Build your own");
+    Image_Pic.setImage(Build_Your_Own);
 }
 
 @FXML
