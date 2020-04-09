@@ -38,6 +38,8 @@ public ListView<String> Selected_Toppings;
 
 public ObservableList<String> Style_list = FXCollections.observableArrayList("Deluxe", "Hawaiian", "Build your own");
 public ObservableList<String> Size_list = FXCollections.observableArrayList("small", "medium", "large");
+public ObservableList<String> Deluxe_Toppings = FXCollections.observableArrayList("Sausage", "Pepperoni", "Green Pepper", "Onion", "Mushroom");
+public ObservableList<String> Hawaiian_Toppings = FXCollections.observableArrayList("Ham", "Pineapple");
 
 @FXML
 public void initialize(){
@@ -51,11 +53,19 @@ public void ChangeCombo(ActionEvent event){
         Image_Pic.setImage(Deluxe);
         Add_Toppings.setDisable(true);
         Remove_Toppings.setDisable(true);
+        Selected_Toppings.getItems().removeAll(Deluxe_Toppings);
+        Selected_Toppings.getItems().removeAll(Hawaiian_Toppings);
+        Selected_Toppings.getItems().addAll(Deluxe_Toppings);
     }else if(Type_Of_Style.getValue().equals("Hawaiian")){
         Image_Pic.setImage(Hawaiian);
         Add_Toppings.setDisable(true);
         Remove_Toppings.setDisable(true);
+        Selected_Toppings.getItems().removeAll(Hawaiian_Toppings);
+        Selected_Toppings.getItems().removeAll(Deluxe_Toppings);
+        Selected_Toppings.getItems().addAll(Hawaiian_Toppings);
     }else{
+        Selected_Toppings.getItems().removeAll(Hawaiian_Toppings);
+        Selected_Toppings.getItems().removeAll(Deluxe_Toppings);
         Image_Pic.setImage(Build_Your_Own);
         Add_Toppings.setDisable(false);
         Remove_Toppings.setDisable(false);
