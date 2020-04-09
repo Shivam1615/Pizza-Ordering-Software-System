@@ -13,8 +13,8 @@
       <ImageView fx:id="Image_Pic" fitHeight="183.0" fitWidth="245.0" layoutX="283.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" />
       <Label layoutX="92.0" layoutY="282.0" text="Toppings" />
       <Label layoutX="380.0" layoutY="282.0" text="Selected Toppings" />
-      <ListView layoutX="54.0" layoutY="309.0" prefHeight="248.0" prefWidth="139.0" fx:id="Toppings"/>
-      <ListView layoutX="356.0" layoutY="309.0" prefHeight="248.0" prefWidth="150.0" fx:id="Selected_Toppings"/>
+      <ListView layoutX="54.0" layoutY="309.0" prefHeight="248.0" prefWidth="139.0" />
+      <ListView layoutX="356.0" layoutY="309.0" prefHeight="248.0" prefWidth="150.0" />
       <TextArea layoutY="601.0" prefHeight="83.0" prefWidth="712.0" />
       <Button layoutX="205.0" layoutY="364.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="139.0" text="Add Toppings &gt;&gt;" fx:id="Add_Toppings"/>
       <Button layoutX="205.0" layoutY="406.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="139.0" text="&lt;&lt; Remove Toppings" fx:id="Remove_Toppings"/>

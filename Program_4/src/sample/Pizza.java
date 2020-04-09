@@ -6,9 +6,13 @@ public abstract class Pizza {
     protected String size;
     protected ArrayList<String> toppings;
 
+    public int PRICE = 0;
+
 
     public Pizza(String style, String size, ArrayList<String> toppings) {
-
+        this.style = style;
+        this.size = size;
+        this.toppings = toppings;
     }
 
     public Pizza(String style, String size) {
@@ -19,6 +23,6 @@ public abstract class Pizza {
 
 
     public String toString() {
-        return " ";
+        return this.style + ":" + this.style + "\n";
     }
 }
