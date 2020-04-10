@@ -32,6 +32,7 @@ public Image Build_Your_Own = new Image("file:Build_Your_Own.jpg");
 
 public Button Add_Toppings;
 public Button Remove_Toppings;
+public Button Clear_Selection;
 
 public ListView<String> Toppings;
 public ListView<String> Selected_Toppings;
