@@ -1,41 +1,23 @@
 package sample;
-import java.util.ArrayList;
 
 public class Deluxe extends Pizza{
 
+    private int SMALL_FLAT_FEE = 14;
+    private int MEDIUM_FLAT_FEE = 2;
+    private int LARGE_FLAT_FEE = 4;
 
     public Deluxe(String style, String size){
         super(style, size);
     }
 
     public int pizzaPrice(){
-        if(this.size.equals("small")){
-            PRICE = 14;
-        }else if(this.size.equals("medium")){
-            PRICE = 16;
-        }else if(this.size.equals("large")){
-            PRICE = 18;
+        int price = SMALL_FLAT_FEE;
+        if (size.equals("medium")) {
+            price += MEDIUM_FLAT_FEE;
+        } else if (size.equals("large")) {
+            price += LARGE_FLAT_FEE;
         }
-        return PRICE;
-    }
-
-    @Override
-    public String toString() {
-        return this.style + ":" + this.size + "\n";
-    }
-
-    public static void main(String[] args) {
-
-        /*ArrayList list = new ArrayList<String>();
-        list.add("Sausage");
-        list.add("Pepperoni");
-        list.add("Green Pepper");
-        list.add("Onion");
-        list.add("Mushroom");
-        */
-
-        Deluxe deluxe = new Deluxe("Deluxe", "small");
-        System.out.println(deluxe.toString() + "$" + deluxe.pizzaPrice());
+        return price;
     }
 
 }

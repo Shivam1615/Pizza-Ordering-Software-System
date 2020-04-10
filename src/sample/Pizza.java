@@ -6,9 +6,6 @@ public abstract class Pizza {
     protected String size;
     protected ArrayList<String> toppings;
 
-    public int PRICE = 0;
-
-
     public Pizza(String style, String size, ArrayList<String> toppings) {
         this.style = style;
         this.size = size;
@@ -19,10 +16,22 @@ public abstract class Pizza {
         this.style = style;
         this.size = size;
     }
+
     public abstract int pizzaPrice();
 
-
     public String toString() {
-        return this.style + ":" + this.style + "\n";
+        return this.style + " " + this.size.toUpperCase() + "\nTotal: $" + pizzaPrice() + "\n";
+    }
+
+    public static void main(String[] args) {
+        ArrayList<String> myToppings = new ArrayList<>();
+        myToppings.add("Tomato");
+        myToppings.add("Onions");
+        myToppings.add("Tomato");
+        myToppings.add("Onions");
+        myToppings.add("Tomato");
+        myToppings.add("Onions");
+        Pizza myPizza = new Deluxe("Deluxe", "large");
+        System.out.println(myPizza);
     }
 }
