@@ -20,7 +20,7 @@ public abstract class Pizza {
     public abstract int pizzaPrice();
 
     public String toString() {
-        return this.style + " " + this.size.toUpperCase() + "\nTotal: $" + pizzaPrice() + "\n";
+        return this.style + " " + this.size.toUpperCase() + "\nPrice: $" + pizzaPrice() + "\n";
     }
 
     public static void main(String[] args) {

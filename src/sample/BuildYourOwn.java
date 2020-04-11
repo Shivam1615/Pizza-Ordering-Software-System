@@ -24,8 +24,9 @@ public class BuildYourOwn extends Pizza{
 
     @Override
     public String toString() {
-        return this.style + " " + this.size.toUpperCase() + "\nToppings: " + this.toppings
-                + "\nTotal: $" + pizzaPrice() + "\n";
+        return this.style + " " + this.size.toUpperCase() + "\nToppings: " +
+                this.toppings.toString().replace("[", "").replace("]", "")
+                + "\nPrice: $" + pizzaPrice() + "\n";
     }
 
 }

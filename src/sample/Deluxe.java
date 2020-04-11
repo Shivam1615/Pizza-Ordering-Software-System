@@ -10,6 +10,10 @@ public class Deluxe extends Pizza{
         super(style, size);
     }
 
+    public String toString() {
+        return this.style + " " + this.size.toUpperCase() + "\nPrice: $" + pizzaPrice() + "\n";
+    }
+
     public int pizzaPrice(){
         int price = SMALL_FLAT_FEE;
         if (size.equals("medium")) {

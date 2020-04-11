@@ -2,6 +2,9 @@ package sample;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
@@ -9,11 +12,15 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class Controller {
 
     public ArrayList<Pizza> myOrder = new ArrayList<>();
+    Stage stage = new Stage();
 
     @FXML
     public ComboBox<String> Type_Of_Style;
@@ -107,6 +114,7 @@ public class Controller {
         }
         myOrder.add(myPizza);
         Output.appendText("Pizza added to order!\n");
+        initialize();
     }
 
     public void addTopping() {
@@ -124,7 +132,31 @@ public class Controller {
     }
 
     public void showOrder() {
-        // TODO: ADD CODE HERE
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("sample2.fxml"));
+            Parent root = loader.load();
+            Controller2 orderScene = loader.getController();
+            stage.setScene(new Scene(root));
+            stage.setTitle("Show Order");
+            stage.setOnHidden(windowEvent -> {
+                if (orderScene.getText() == null) {
+                    myOrder.clear();
+                }
+            });
+            stage.show();
+
+            int total = 0;
+            for (int i = 0; i < myOrder.size(); i++) {
+                orderScene.showText(myOrder.get(i).toString() + "\n");
+                total += myOrder.get(i).pizzaPrice();
+            }
+            if (total == 0) {
+                orderScene.showText("Order is empty.");
+            } else orderScene.showText("Total Price: $" + total);
+
+        } catch(IOException ex){
+            System.err.println(ex);
+        }
     }
 
 }
