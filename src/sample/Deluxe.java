@@ -6,12 +6,15 @@ public class Deluxe extends Pizza{
     private int MEDIUM_FLAT_FEE = 2;
     private int LARGE_FLAT_FEE = 4;
 
+    Controller controller = new Controller();
+
     public Deluxe(String style, String size){
         super(style, size);
     }
 
     public String toString() {
-        return this.style + " " + this.size.toUpperCase() + "\nPrice: $" + pizzaPrice() + "\n";
+        return this.style + ":" + this.size.toUpperCase() + "\nToppings: " +
+                controller.Deluxe_Toppings.toString().replace("[", "").replace("]", "") + "\nPrice: $" + pizzaPrice() + "\n";
     }
 
     public int pizzaPrice(){
