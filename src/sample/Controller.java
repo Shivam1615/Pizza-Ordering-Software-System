@@ -66,6 +66,7 @@ public class Controller {
         Type_Of_Style.setItems(Style_list);
         Type_Of_Size.setItems(Size_list);
         Toppings.setItems(All_Toppings);
+        Output.clear();
     }
 
     @FXML
@@ -113,8 +114,9 @@ public class Controller {
             myPizza = new BuildYourOwn("Build Your Own", Type_Of_Size.getValue(), new ArrayList<>(Selected_Toppings_List));
         }
         myOrder.add(myPizza);
-        Output.appendText("Pizza added to order!\n");
         initialize();
+        Output.appendText("Pizza added to order!\n");
+        //initialize();
     }
 
     public void addTopping() {
