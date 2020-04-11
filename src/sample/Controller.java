@@ -106,7 +106,7 @@ public class Controller {
             myPizza = new BuildYourOwn("Build Your Own", Type_Of_Size.getValue(), new ArrayList<>(Selected_Toppings_List));
         }
         myOrder.add(myPizza);
-        Output.appendText("Added to Order!\n" + myPizza + "\n");
+        Output.appendText("Pizza added to order!\n");
     }
 
     public void addTopping() {
@@ -124,7 +124,7 @@ public class Controller {
     }
 
     public void showOrder() {
-        // TODO: Add code here
+        // TODO: ADD CODE HERE
     }
 
 }
