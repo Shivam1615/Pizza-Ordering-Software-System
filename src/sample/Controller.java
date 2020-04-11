@@ -159,6 +159,7 @@ public class Controller {
         } catch(IOException ex){
             System.err.println(ex);
         }
+        Output.clear();
     }
 
 }
