@@ -12,6 +12,7 @@ public class Hawaiian extends Pizza{
         super(style, size);
     }
 
+    @Override
     public String toString() {
         return this.style + ":" + this.size.toUpperCase() + "\nToppings: " + 
                 controller.Hawaiian_Toppings.toString().replace("[", "").replace("]", "") +
