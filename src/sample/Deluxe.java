@@ -14,7 +14,7 @@ public class Deluxe extends Pizza{
     
     @Override
     public String toString() {
-        return this.style + ":" + this.size.toUpperCase() + "\nToppings: " +
+        return this.style + " " + this.size.toUpperCase() + "\nToppings: " +
                 controller.Deluxe_Toppings.toString().replace("[", "").replace("]", "") + "\nPrice: $" + pizzaPrice() + "\n";
     }
 

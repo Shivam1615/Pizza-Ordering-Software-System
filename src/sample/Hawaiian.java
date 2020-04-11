@@ -14,7 +14,7 @@ public class Hawaiian extends Pizza{
 
     @Override
     public String toString() {
-        return this.style + ":" + this.size.toUpperCase() + "\nToppings: " + 
+        return this.style + " " + this.size.toUpperCase() + "\nToppings: " +
                 controller.Hawaiian_Toppings.toString().replace("[", "").replace("]", "") +
                 "\nPrice: $" + pizzaPrice() + "\n";
     }
