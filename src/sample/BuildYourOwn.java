@@ -15,9 +15,9 @@ public class BuildYourOwn extends Pizza{
     public int pizzaPrice() {
         int price = SMALL_FLAT_FEE + (PRICE_PER_TOPPING * toppings.size());
         if (size.equals("medium")) {
-            price += MEDIUM_FLAT_FEE + (PRICE_PER_TOPPING * toppings.size());
+            price += MEDIUM_FLAT_FEE; // + (PRICE_PER_TOPPING * toppings.size());
         } else if (size.equals("large")) {
-            price += LARGE_FLAT_FEE + (PRICE_PER_TOPPING * toppings.size());
+            price += LARGE_FLAT_FEE; // + (PRICE_PER_TOPPING * toppings.size());
         }
         return price;
     }
