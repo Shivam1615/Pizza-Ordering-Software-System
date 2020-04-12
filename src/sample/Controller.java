@@ -17,6 +17,14 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ * This class is the controller class and it takes care of event driven programming for the software system for
+ * ordering pizzas and included important action events such as adding order and showing order after customer chooses a
+ * specific customization of the pizza.
+ *
+ * @author Shivam Patel
+ * @author Kevin Shah
+ */
 public class Controller {
 
     public ArrayList<Pizza> myOrder = new ArrayList<>();
@@ -54,6 +62,10 @@ public class Controller {
     public ObservableList<String> All_Toppings;
     public ObservableList<String> Selected_Toppings_List;
 
+    /**
+     * This method just initializes the combobox and the list of toppings along with setting defualt values of
+     * style and size as Build Your Own and medium. This method also generates images from combobox.
+     */
     @FXML
     public void initialize() {
         All_Toppings = FXCollections.observableArrayList("Beef", "Cheese", "Chicken",
@@ -69,6 +81,10 @@ public class Controller {
         Output.clear();
     }
 
+    /**
+     * This method takes care of the combobox items by changing images based on the chosen pizza and
+     * gives a list of three different styles and sizes customers can chose from when giving an order.
+     */
     @FXML
     public void ChangeCombo() {
         if (Type_Of_Style.getValue().equals("Deluxe")) {
@@ -90,6 +106,9 @@ public class Controller {
         }
     }
 
+    /**
+     * This method removes toppings from the Build Your Own pizza from the list view.
+     */
     public void removeTopping() {
         String selectedTopping = Selected_Toppings.getSelectionModel().getSelectedItem();
         if (selectedTopping != null) {
@@ -100,6 +119,10 @@ public class Controller {
         }
     }
 
+    /**
+     * This method adds the order the customer decides to give based on the customization of their pizzas by adding
+     * to an arraylist that holds Pizza as an object as that is order of the customer.
+     */
     public void addToOrder() {
         if (Type_Of_Style.getValue().equals("Build your own") && Selected_Toppings_List.isEmpty()) {
             Output.appendText("Error: You must have at least 1 topping.\n");
@@ -119,6 +142,9 @@ public class Controller {
         //initialize();
     }
 
+    /**
+     * This method adds toppings to the Build Your Own pizzas and up to 6 different toppings for customers to chose from.
+     */
     public void addTopping() {
         if (Selected_Toppings_List.size() == 6) {
             Output.appendText("Error: You are not allowed to add more than 6 toppings.\n");
@@ -133,6 +159,10 @@ public class Controller {
         }
     }
 
+    /**
+     * This method opens up the second controller and outputs the items from the arraylist that holds the order the
+     * customer gave from addOrder() method.
+     */
     public void showOrder() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("sample2.fxml"));
