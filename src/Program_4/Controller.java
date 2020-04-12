@@ -1,4 +1,4 @@
-package sample;
+package Program_4;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -178,9 +178,9 @@ public class Controller {
             stage.show();
 
             int total = 0;
-            for (int i = 0; i < myOrder.size(); i++) {
-                orderScene.showText(myOrder.get(i).toString() + "\n");
-                total += myOrder.get(i).pizzaPrice();
+            for (Pizza pizza : myOrder) {
+                orderScene.showText(pizza.toString() + "\n");
+                total += pizza.pizzaPrice();
             }
             if (total == 0) {
                 orderScene.showText("Order is empty.");
